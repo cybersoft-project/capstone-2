@@ -1,0 +1,55 @@
+// SUPPORT-INFO
+.support-info {
+    background-color: $bg-color-green-3;
+    padding: 70px 0;
+    color: $color-grey-3;
+    .support-content {
+        h3 {
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: $color-grey-4;
+        }
+
+        i {
+            font-size: 90%;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        img {
+            width: 100%;
+            height: 35px;
+            width: 35px;
+            border-radius: 3px;
+            filter: grayscale(100%);
+            transition: all .1ms;
+
+            &:hover {
+                filter: none;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            line-height: 2rem;
+            color: $color-white;
+            transition: all .1s;
+
+            &:hover {
+                color: $color-red-2;
+            }
+
+            &.support-icon {
+                display: inline-block;
+                margin: 3px 2px 3px 0;
+            }
+        }
+
+        .support-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3rem;
+        }
+    }
+}
