@@ -81,5 +81,5 @@ window.onload = () => {
     let arrBanner = document.querySelectorAll(".bitasCarousel .carousel-item a");
     setTimeout(() => {
         randomBanner(arrBanner ,arrBanner.length);
-    }, 200);
+    }, 500);
 };
