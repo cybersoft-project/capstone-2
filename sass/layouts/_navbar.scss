@@ -1,0 +1,109 @@
+// NAVBAR
+.navbar {
+    button {
+        background-color: $bg-color-red-1;
+        color: $color-white;
+        border-radius: 2px;
+        margin-right: 20px;
+        font-size: 1rem;
+    }
+
+    .bar-item {
+        height: 55px;
+        line-height: 51px;
+        padding: 0 22px;
+        white-space: nowrap;
+        font-weight: bold;
+        border-radius: 2px;
+
+        a {
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .1s;
+            color: $color-black-1;
+        }
+        
+        &:hover {
+            background-color: $bg-color-red-1;
+            a {
+                color: $color-white;
+            }
+        }
+    }
+    
+    #navbarNav {
+        position: absolute;
+        z-index: 3;
+        width: calc(100% - (calc(var(--bs-gutter-x) * .5) * 2) );
+        top: 55px;
+        margin: 0;
+        .row {
+            width: 100%;
+            margin: 0;
+        }
+        &.navbar-collapse.show {
+            padding: 40px 0 50px 0;
+            transition: all .5s;
+        }
+        
+        text-align: left;
+        background-color: white;
+        border: 1px solid #EC2C13;
+        border-bottom-width: 2px;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 #fbd5d0;
+
+        .sub-title {
+            text-transform: uppercase;
+            padding: 0 0 10px 15px;
+            color: #EC2C13;
+            font-size: 1rem;
+            font-weight: bold;
+
+            &#third-title {
+                padding-left: 25px;
+            }
+        }
+
+        .menu-list {
+
+            .list-content {
+                padding: 0 10px;
+
+                &.border-left {
+                    padding-left: 20px;
+                    border-left: 1px solid #29363d1a;
+                }
+
+                li {
+                    list-style: none;
+                    padding: 7px 15px;
+                    color: #2E3538;
+                    background-color: white;
+                    border-radius: 4px;
+
+                    & > a {
+                        text-decoration: none;
+                        color: #2E3538;
+                    }
+
+                    &:hover {
+                        background-color: #f0f3f4;
+                    }
+                }
+            }
+            
+        }
+
+        .line {
+            padding: 15px 25px;
+            span {
+                border-top: 1px solid #29363d1a;
+                display: block;
+                margin: 20px 0;
+            }
+        }
+    }
+}

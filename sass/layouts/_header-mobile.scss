@@ -1,0 +1,114 @@
+// HEADER MOBILE
+.header-mobile {
+    display: none;
+    visibility: hidden;
+    width: 100%;
+    border-bottom: 1px solid $color-grey-5;
+    padding: 5px 0;
+    background-color: $color-white;
+    a {
+        padding: 0 15px;
+        text-decoration: none;
+        color: $color-black-1;
+    }
+    .mobile-left {
+        display: flex;
+        align-items: center;
+        img {
+            width: 100%;
+            height: 24px;
+        }
+
+        & a:last-child {
+            height: 40px;
+            width: 40px;
+            border: 5px solid $color-skin-1;
+            border-radius: 50px;
+            background-color: $bg-color-yellow;
+            color: $color-black;
+            font-size: 1.3rem;
+            text-align: center;
+            padding: 0;
+        }
+    }
+    
+
+    .mobile-right {
+        display: flex;
+        align-items: center;
+        img {
+            width: 100%;
+            height: 22px;
+        }
+
+        a {
+            line-height: 40px;
+        }
+    }
+
+    #navbarNavMobile {
+        .info-form {
+            margin-right: 20px;
+            max-width: 850px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 56px;
+
+            form {
+                position: relative;
+                input {
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    border-radius: 25px;
+                    font-size: 1.25rem;
+                    border: none;
+                    outline: none;
+                    background-color: $bg-color-pale;
+                    padding: 0 60px 0 25px;
+                    color: $color-black-1;
+                }
+        
+                button {
+                    background-color: transparent;
+                    position: absolute;
+                    line-height: 50px;
+                    right: 1rem;
+                    border: none;
+        
+                    i {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+
+        .mobile-content {
+            h3 {
+                font-size: 120%;
+                font-weight: bold;
+                margin: 0 0 20px 5px;
+
+            }
+
+            .mobile-menu {
+                border: 1px solid $color-grey-5;
+                border-radius: 5px;
+                margin-bottom: 25px;
+
+                .mobile-item {
+                    border-bottom: 1px solid $color-grey-5;
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        padding: 7px 10px;
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}

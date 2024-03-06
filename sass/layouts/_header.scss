@@ -1,0 +1,77 @@
+// HEADER
+header {
+    font-family: "Roboto Condensed", sans-serif;
+    background-color: $bg-color-green-2;
+    padding: 7px 0;
+
+    .header-content, .header-left, .header-right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .info-content {
+        i {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 1rem;
+            background-color: $bg-color-green-1;
+            color: $color-green-1;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: $color-white;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        li {
+            display: inline-block;
+            list-style: none;
+
+            &:first-of-type {
+                border-right: 1px solid $color-green-1;
+                margin-right: 5px;
+                padding-right: 10px;
+                line-height: 13px;
+                border-width: 1.5px;
+            }
+        }
+    }
+
+    .info-form {
+        position: relative;
+        margin-right: 20px;
+        input {
+            max-width: 160px;
+            height: 28px;
+            border-radius: 15px;
+            background-color: $bg-color-pale;
+            
+            border: none;
+            outline: none;
+            padding: 0 28px 0 15px;
+        }
+
+        button {
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            border: none;
+
+            img {
+                height: 17px;
+                width: 100%;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,13 @@
+@mixin colorBlock($pos) {
+    $arrColor: ();
+
+    @each $color-value in map-get($arrDemo, $pos) {
+        $arrColor: append($arrColor, $color-value, comma);
+    }
+
+    @for $i from 1 through length($arrColor) {
+        &:nth-child(#{$i}) {
+            background-color: nth($arrColor, $i);                 
+        }
+    }
+}

@@ -1,0 +1,106 @@
+// CONTAINER ( RESPONSIVE )
+.screen-width {
+    @media screen and (min-width: 768px) {
+        max-width: 1200px !important;
+    }
+}
+
+// HEADER ( RESPONSIVE )
+header {
+    @media screen and (max-width: 767.98px) {
+        display: none;
+        visibility: hidden;
+    }
+
+    .header-content, .header-left, .header-right {
+        @media screen and (max-width: 991.98px) {
+            gap: 5px;
+        }
+    }
+
+    .info-content {
+        i {
+            @media screen and (max-width: 786px) {
+                margin-right: 5px;
+            }
+        }
+
+        a {
+            @media screen and (max-width: 991.98px) {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+// LOGO ( RESPONSIVE )
+.logo {
+    @media screen and (max-width: 767.98px) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+// NAVBAR ( RESPONSIVE )
+.navbar {
+    @media screen and (max-width: 767.98px) {
+        display: none;
+        visibility: hidden;
+    }
+
+    button {
+        @media screen and (max-width: 991.98px) {
+            &.navbar-toggler {
+                padding: 0 22px;
+            }
+        }
+    }
+
+    .bar-item {
+        @media screen and (max-width: 991.98px) {
+            padding: 0 10px;
+        }
+        @media screen and (max-width: 786px) {
+            padding: 0 8px;
+        }
+    }
+}
+
+// CAROUSEL ( RESPONSIVE )
+.bitasCarousel {
+    @media screen and (max-width: 767.98px) {
+        .container-fluid {
+            padding: 0;
+        }
+    }
+}
+
+// PRODUCTS ( RESPONSIVE )
+.products {
+    .product-content {
+        h2 {
+            &::before, &::after {
+                @media screen and (max-width: 767.98px) {
+                    width: auto;
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        .button-more {
+            button {
+                @media screen and (max-width: 315px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// HEADER MOBILE ( RESPONSIVE ) 
+.header-mobile {
+    @media screen and (max-width: 767.98px) {
+        display: block;
+        visibility: visible;
+    }
+}
