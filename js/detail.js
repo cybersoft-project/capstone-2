@@ -35,8 +35,11 @@ const renderData = async () => {
 
 const renderRelative = arrProduct => {
     let content = '';
+    let relativeContent = ''
+    let index = 1;
 
     arrProduct.forEach(product => {
+
         content += `
         <div class="col ">
         <a class="wrapper d-flex overflow-hidden flex-column p-5 border border-black rounded-5 align-items-center" href="${getURL()}?idProduct=${product.id}">
@@ -48,10 +51,26 @@ const renderRelative = arrProduct => {
 
       </div>
         `
+        relativeContent += `
+        <div class="col-6 col-md-4">
+        <a id="id1" href="#">
+            <img src="${product.image}" alt="Đây là ảnh Sản phẩm 1">
+        </a>
+        <div class="product-colors item${index}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p id="name1" class="product-name">Sản phẩm Demo</p>
+        <p id="size1" class="product-size">Size: 36 - 42</p>
+        <p id="price1">${formatPrice(product.price * 1000)}</p>
+    </div>
+        `
+        index++;
     })
-    let relativeEle = document.querySelector('#splienquan .row');
-
-    document.querySelector('#splienquan .row').innerHTML = content;
+    let relativeEle = document.querySelector('.product-items');
+    relativeEle.innerHTML = relativeContent;
 }
 
 const getURL = () => {
@@ -132,10 +151,10 @@ const sizeHandle = () => {
             removeActive('.sizeBox');
             e.target.parentNode.classList.add('active');
             const radios = document.getElementsByName('size');
-    
+
             // Lặp qua từng radio button và kiểm tra nếu được chọn
             for (const radio of radios) {
-                
+
                 if (radio.checked) {
                     console.log(radio.value); // In ra value của radio button đang được chọn
                     break; // Thoát vòng lặp sau khi tìm thấy radio button được chọn
@@ -145,7 +164,7 @@ const sizeHandle = () => {
         })
     })
     // Lấy tất cả radio button với name "gender"
-   
+
 
 }
 const removeActive = selector => {
