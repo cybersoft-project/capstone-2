@@ -10,25 +10,68 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
   <style>
+
     .carousel-indicators [data-bs-target] {
       width: 100px;
       height: 100px;
+      background-color: white;
     }
 
     .list-unstyled li.active {
       border: 3px solid rgb(154, 0, 0) !important;
       background-color: rgb(252, 215, 221);
     }
+
+    .number-input-container {
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .number-input-container button {
+      background-color: blue;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .number-input-container input {
+      text-align: center;
+      border: none;
+      padding: 10px;
+      width: 40px;
+      font-size: 16px;
+      margin: 0;
+    }
   </style>
 </head>
 
 <body>
+  <section id="breadcrump">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Detail</li>
+        </ol>
+      </nav>
+
+    </div>
+  </section>
   <section id="detail">
     <div class="container">
       <div class="row row-cols-1 row-cols-md-2">
-        <div id="productCaraousel" class="col carousel carousel-dark slide pb-5 h-100">
-          <div class="carousel-indicators">
+        <div id="productCaraousel" class="col carousel slide pb-5 h-100">
+          <div class="carousel-indicators" id="txt-img-indicators">
             <img type="button" data-bs-target="#productCaraousel" data-bs-slide-to="0" class="active h-100 m-3"
               src="./img/image15.png" aria-current="true" aria-label="Slide 1">
             <img type="button" data-bs-target="#productCaraousel" data-bs-slide-to="1" class="h-100 m-3"
@@ -36,7 +79,7 @@
             <img type="button" data-bs-target="#productCaraousel" data-bs-slide-to="2" class="h-100 m-3"
               src="./img/image17.png" aria-label="Slide 3">
           </div>
-          <div class="carousel-inner pb-5">
+          <div class="carousel-inner pb-5" id="txt-img">
             <div class="carousel-item active" data-bs-interval="10000">
               <img src="./img/image15.png" class="d-block w-100" alt="..." />
             </div>
@@ -58,356 +101,371 @@
         </div>
         <div class="col row">
           <div class="col-md-8">
-            <h1>Dép quai ngang nữ - DORAH.02</h1>
-            <p>Price: 265,000 VND</p>
-            <p>Choose color:</p>
-            <ul class="list-unstyled d-flex">
-              <li class="w-25 rounded border mx-2 p-2 active">
-                <label for="color-den">
-                  <img src="./img/image15.png" class="img-fluid" alt="" srcset=""><input type="radio" name="color"
-                    value="den" id="color-den" class="visually-hidden">
-                  Den
-                </label>
-              </li>
-              <li class="w-25 rounded border mx-2 p-2">
-                <label for="color-hong">
-                  <img src="./img/image15.png" class="img-fluid" alt="" srcset=""><input type="radio" name="color"
-                    value="den" id="color-hong" class="visually-hidden">
-                  Hong
-                </label>
-              </li>
-            </ul>
-            <p>Choose size:</p>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#huongdanBox">
-              Launch static backdrop modal
-            </button>
+            <h1 id="txt-id">Dép quai ngang nữ - DORAH.02</h1>
+            <p id="txt-gia">Price: 265,000 VND</p>
 
-            <!-- Modal -->
-            <div class="modal fade" id="huongdanBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-              aria-labelledby="huongdanBoxLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg overflow-hidden">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <div class="h2">Hướng dẫn chọn size</div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div id="huongdanContainer">
-            
-            
-            
-            
-            
-            
-            
-            
-            <div class="limit-container">
-              <div class="noidung">
-                <p><span >Bạn cần chuẩn bị tờ giấy trắng A4, bút, thước.</span></p>
-            
-            <p><img class="w-100 object-fit-cover" alt="huong dan chon size" src="https://bitas.com.vn/lib/pic/huong-dan-chon-size.png" title="Hướng dẫn chọn size"></p>
-            
-            <table width="100%">
-              <tbody>
-                <tr>
-                  <td class=""valign="top" width="70"><span >Bước 1</span></td>
-                  <td class=""valign="top"><span >:</span></td>
-                  <td class=""valign="top"><span >Đặt bàn chân ngay ngắn lên tờ giấy trắng và giữ chặt, đứng thẳng người.</span>
-                  <div class="red"><span >trong trường hợp bạn mua giày thể thao thì mang vớ để có độ chính xác cao.</span></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class=""valign="top"><span >Bước 2</span></td>
-                  <td class=""valign="top"><span >:</span></td>
-                  <td class=""valign="top"><span >Dùng bút vẽ một vòng quanh chân bạn. (Hình 1)</span></td>
-                </tr>
-                <tr>
-                  <td class=""valign="top"><span >Bước 3</span></td>
-                  <td class=""valign="top"><span >:</span></td>
-                  <td class=""valign="top"><span >Đánh dấu điểm đầu ngón chân dài nhất và điểm gót chân.</span></td>
-                </tr>
-                <tr>
-                  <td class=""valign="top"><span >Bước 4</span></td>
-                  <td class=""valign="top"><span >:</span></td>
-                  <td class=""valign="top"><span >Dùng thước đo khoảng cách (mm) giữa 2 điểm vừa đánh dấu. (Hình 2)</span></td>
-                </tr>
-                <tr>
-                  <td class=""valign="top"><span >Bước 5</span></td>
-                  <td class=""valign="top"><span >:</span></td>
-                  <td class=""valign="top"><span >Dùng kết quả đo được (mm) so với bảng quy đổi bên dưới đề tìm ra cỡ size tương ứng</span></td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <h2><span style="font-size:22px;">Bảng quy đổi cỡ size</span></h2>
-            
-            <p><img class="w-100 object-fit-contain" alt="" src="https://admin.bitas.com.vn/image/hangvo0103/size-178764288014800.png" style="width: 1031px; height: 144px;"></p>
-            
-            <p><span style="font-size:22px;">Lưu ý</span></p>
-            
-            <ul>
-              <li><span >Bạn nên đo cả 2 bàn chân và chọn chiều dài bàn chân nào dài hơn để chọn cỡ số giày phù hợp với bạn.</span></li>
-              <li><span >Do kết cấu của bàn chân thay đổi theo thời điểm trong ngày, nên sẽ có sai lệch tùy thuộc vào thời điểm bạn đo trong ngày. Thời gian tốt nhất để đo là vào cuối ngày.</span></li>
-              <li><span >Thông số cỡ số giày sẽ thay đổi tùy theo kết cấu bàn chân, theo từng mẫu và chất liệu của sản phẩm và theo sở thích mang ôm sát hay thoải mái của từng người. Vì vậy, bảng hướng dẫn chọn cỡ số giày chỉ mang tính chất tham khảo.</span></li>
-            </ul>
-            
-            <p><strong>[Tham khảo thêm] BẢNG THÔNG SỐ CHỌN SIZE THEO CHIỀU CAO CÂN NẶNG</strong></p>
-            
-            <table class="w-100 border-0">
-              <tbody>
-                <tr>
-                  <td class="border"colspan="1" rowspan="2" style="text-align: center;"><span >TUỔI</span></td>
-                  <td class="border"colspan="3" rowspan="1" style="text-align: center;"><span >NỮ</span></td>
-                  <td class="border"colspan="3" rowspan="1" style="text-align: center;"><span >NAM</span></td>
-                </tr>
-                <tr>
-                  <td><span >CAO (Cm)</span></td>
-                  <td><span >NẶNG (Kg)</span></td>
-                  <td><span >SIZE</span></td>
-                  <td><span >CAO (Cm)</span></td>
-                  <td><span >NẶNG (Kg)</span></td>
-                  <td><span >SIZE</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >2</span></td>
-                  <td class="border"style="text-align: center;"><span >85.5</span></td>
-                  <td class="border"style="text-align: center;"><span >12</span></td>
-                  <td class="border"style="text-align: center;"><span >21-22</span></td>
-                  <td class="border"style="text-align: center;"><span >86.8</span></td>
-                  <td class="border"style="text-align: center;"><span >12.5</span></td>
-                  <td class="border"style="text-align: center;"><span >21-22</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >3</span></td>
-                  <td class="border"style="text-align: center;"><span >94</span></td>
-                  <td class="border"style="text-align: center;"><span >14.2</span></td>
-                  <td class="border"style="text-align: center;"><span >23-24</span></td>
-                  <td class="border"style="text-align: center;"><span >95.2</span></td>
-                  <td class="border"style="text-align: center;"><span >14</span></td>
-                  <td class="border"style="text-align: center;"><span >23-24</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >4</span></td>
-                  <td class="border"style="text-align: center;"><span >100.3</span></td>
-                  <td class="border"style="text-align: center;"><span >15.4</span></td>
-                  <td class="border"style="text-align: center;"><span >25-26</span></td>
-                  <td class="border"style="text-align: center;"><span >102.3</span></td>
-                  <td class="border"style="text-align: center;"><span >16.3</span></td>
-                  <td class="border"style="text-align: center;"><span >25-26</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >5</span></td>
-                  <td class="border"style="text-align: center;"><span >107.9</span></td>
-                  <td class="border"style="text-align: center;"><span >17.9</span></td>
-                  <td class="border"style="text-align: center;"><span >27</span></td>
-                  <td class="border"style="text-align: center;"><span >109.2</span></td>
-                  <td class="border"style="text-align: center;"><span >18.4</span></td>
-                  <td class="border"style="text-align: center;"><span >27-28</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >6</span></td>
-                  <td class="border"style="text-align: center;"><span >115.5</span></td>
-                  <td class="border"style="text-align: center;"><span >19.9</span></td>
-                  <td class="border"style="text-align: center;"><span >28</span></td>
-                  <td class="border"style="text-align: center;"><span >115.5</span></td>
-                  <td class="border"style="text-align: center;"><span >20.6</span></td>
-                  <td class="border"style="text-align: center;"><span >28-29</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >7</span></td>
-                  <td class="border"style="text-align: center;"><span >121.1</span></td>
-                  <td class="border"style="text-align: center;"><span >22.4</span></td>
-                  <td class="border"style="text-align: center;"><span >29</span></td>
-                  <td class="border"style="text-align: center;"><span >121.9</span></td>
-                  <td class="border"style="text-align: center;"><span >22.9</span></td>
-                  <td class="border"style="text-align: center;"><span >29-30</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >8</span></td>
-                  <td class="border"style="text-align: center;"><span >128.2</span></td>
-                  <td class="border"style="text-align: center;"><span >25.8</span></td>
-                  <td class="border"style="text-align: center;"><span >30</span></td>
-                  <td class="border"style="text-align: center;"><span >128.2</span></td>
-                  <td class="border"style="text-align: center;"><span >25.6</span></td>
-                  <td class="border"style="text-align: center;"><span >31-32</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >9</span></td>
-                  <td class="border"style="text-align: center;"><span >133.3</span></td>
-                  <td class="border"style="text-align: center;"><span >28.1</span></td>
-                  <td class="border"style="text-align: center;"><span >31</span></td>
-                  <td class="border"style="text-align: center;"><span >133.3</span></td>
-                  <td class="border"style="text-align: center;"><span >28.6</span></td>
-                  <td class="border"style="text-align: center;"><span >32-33</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >10</span></td>
-                  <td class="border"style="text-align: center;"><span >138.4</span></td>
-                  <td class="border"style="text-align: center;"><span >31.9</span></td>
-                  <td class="border"style="text-align: center;"><span >32</span></td>
-                  <td class="border"style="text-align: center;"><span >138.4</span></td>
-                  <td class="border"style="text-align: center;"><span >32</span></td>
-                  <td class="border"style="text-align: center;"><span >33-34</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >11</span></td>
-                  <td class="border"style="text-align: center;"><span >144</span></td>
-                  <td class="border"style="text-align: center;"><span >36.9</span></td>
-                  <td class="border"style="text-align: center;"><span >33</span></td>
-                  <td class="border"style="text-align: center;"><span >144.5</span></td>
-                  <td class="border"style="text-align: center;"><span >36.9</span></td>
-                  <td class="border"style="text-align: center;"><span >34-35</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >12</span></td>
-                  <td class="border"style="text-align: center;"><span >149.8</span></td>
-                  <td class="border"style="text-align: center;"><span >41.5</span></td>
-                  <td class="border"style="text-align: center;"><span >34</span></td>
-                  <td class="border"style="text-align: center;"><span >149.9</span></td>
-                  <td class="border"style="text-align: center;"><span >41.5</span></td>
-                  <td class="border"style="text-align: center;"><span >36</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >13</span></td>
-                  <td class="border"style="text-align: center;"><span >156.7</span></td>
-                  <td class="border"style="text-align: center;"><span >45.8</span></td>
-                  <td class="border"style="text-align: center;"><span >35</span></td>
-                  <td class="border"style="text-align: center;"><span >156.9</span></td>
-                  <td class="border"style="text-align: center;"><span >45.8</span></td>
-                  <td class="border"style="text-align: center;"><span >37</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >14</span></td>
-                  <td class="border"style="text-align: center;"><span >158.7</span></td>
-                  <td class="border"style="text-align: center;"><span >47.6</span></td>
-                  <td class="border"style="text-align: center;"><span >36</span></td>
-                  <td class="border"style="text-align: center;"><span >163.8</span></td>
-                  <td class="border"style="text-align: center;"><span >47.6</span></td>
-                  <td class="border"style="text-align: center;"><span >38</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >15</span></td>
-                  <td class="border"style="text-align: center;"><span >159.7</span></td>
-                  <td class="border"style="text-align: center;"><span >52.1</span></td>
-                  <td class="border"style="text-align: center;"><span >37</span></td>
-                  <td class="border"style="text-align: center;"><span >170.1</span></td>
-                  <td class="border"style="text-align: center;"><span >54</span></td>
-                  <td class="border"style="text-align: center;"><span >39</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >16-17</span></td>
-                  <td class="border"style="text-align: center;"><span >162.5</span></td>
-                  <td class="border"style="text-align: center;"><span >53.5</span></td>
-                  <td class="border"style="text-align: center;"><span >38</span></td>
-                  <td class="border"style="text-align: center;"><span >173.4</span></td>
-                  <td class="border"style="text-align: center;"><span >60.8</span></td>
-                  <td class="border"style="text-align: center;"><span >40</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >17-18</span></td>
-                  <td class="border"style="text-align: center;"><span >162.5</span></td>
-                  <td class="border"style="text-align: center;"><span >54.4</span></td>
-                  <td class="border"style="text-align: center;"><span >39</span></td>
-                  <td class="border"style="text-align: center;"><span >175.2</span></td>
-                  <td class="border"style="text-align: center;"><span >64.4</span></td>
-                  <td class="border"style="text-align: center;"><span >41</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >18-19</span></td>
-                  <td class="border"style="text-align: center;"><span >163</span></td>
-                  <td class="border"style="text-align: center;"><span >56.7</span></td>
-                  <td class="border"style="text-align: center;"><span >40</span></td>
-                  <td class="border"style="text-align: center;"><span >175.7</span></td>
-                  <td class="border"style="text-align: center;"><span >66.9</span></td>
-                  <td class="border"style="text-align: center;"><span >42</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >19-20</span></td>
-                  <td class="border"style="text-align: center;"><span >163</span></td>
-                  <td class="border"style="text-align: center;"><span >57.1</span></td>
-                  <td class="border"style="text-align: center;"><span >41</span></td>
-                  <td class="border"style="text-align: center;"><span >176.5</span></td>
-                  <td class="border"style="text-align: center;"><span >68.9</span></td>
-                  <td class="border"style="text-align: center;"><span >43</span></td>
-                </tr>
-                <tr>
-                  <td class="border"style="text-align: center;"><span >21-22</span></td>
-                  <td class="border"style="text-align: center;"><span >163.3</span></td>
-                  <td class="border"style="text-align: center;"><span >58</span></td>
-                  <td class="border"style="text-align: center;"><span >42</span></td>
-                  <td class="border"style="text-align: center;"><span >177</span></td>
-                  <td class="border"style="text-align: center;"><span >70.3</span></td>
-                  <td class="border"style="text-align: center;"><span >44</span></td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                  <p>&nbsp;</p>
-            
-                  <p><span ><u><strong>LƯU Ý:</strong></u></span></p>
-            
-                  <p><span >1. Người trưởng thành từ 17-18 tuổi trở lên chân không còn thay đổi về kích thước nên chọn đúng size đã sử dụng trước đó&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-            
-                  <p><span >2. Chiều cao và cân nặng ở mức phát triển bình thường theo tiêu chuẩn WHO</span></p>
-            
-                  <p><span >3. Nếu chiều cao và cân nặng bị lệch so với tiêu chuẩn thì lấy chiều cao làm chuẩn để chọn size.</span></p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <p>&nbsp;</p>
-            
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                  <p>&nbsp;</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <p>&nbsp;</p>
-            
-            <p>&nbsp;</p>
-              </div>
+            <div class="d-flex justify-content-between">
+              <p>Chọn cỡ giày</p>
+              <!-- Button trigger modal -->
+              <a data-bs-toggle="modal" data-bs-target="#huongdanBox">
+                Cách chọn kích thước
+              </a>
             </div>
-            </div>
-                  </div>
-                  <div class="modal-footer"> </div>
-                </div>
-              </div>
-            </div>
-            <ul class="list-unstyled d-flex">
-              <li class="mx-3 active"><label class="p-2 border rounded" for="size-36"><input type="radio" name="size"
-                    value="36" id="size-36" class="visually-hidden"> 36</label></li>
-              <li class="mx-3"> <label class="p-2 border rounded" for="size-37"><input type="radio" name="size"
-                    value="37" id="size-37" class="visually-hidden"> 37</label></li>
-              <li class="mx-3"><label class="p-2 border rounded" for="size-38"><input type="radio" name="size"
-                    value="38" id="size-38" class="visually-hidden"> 38</label></li>
-              <li class="mx-3"><label class="p-2 border rounded" for="size-39"><input type="radio" name="size"
-                    value="39" id="size-39" class="visually-hidden"> 39</label></li>
-              <li class="mx-3"><label class="p-2 border rounded" for="size-40"><input type="radio" name="size"
-                    value="40" id="size-40" class="visually-hidden"> 40</label></li>
+
+
+
+            <ul class="list-unstyled d-flex" id="txt-size">
+
 
             </ul>
+            <div class="number">
+              <p> Chọn số lượng: </p>
+              <div class="number-input-container">
+                
+                <button onclick="decrement()">-</button>
+                <input type="number" id="numberInput" value="1">
+                <button onclick="increment()">+</button>
+              </div>
+            </div>
+            
             <p>
-              <button type="button" class="btn btn-primary">Add to cart</button>
-              <button type="button" class="btn btn-secondary">Check availability</button>
+              <button type="button" class="btn btn-primary mt-3">Add to cart <i class="fa fa-shopping-cart"></i> </button>
             </p>
-            <p>
-              Want to buy directly from Bitas stores? Check product availability before coming!
-              <a href="check-availability.html">Check availability at Bitas stores</a>
+            <p id="desc">
+              
             </p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <!-- Modal -->
+  <div class="modal fade" id="huongdanBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="huongdanBoxLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg overflow-hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="h2">Hướng dẫn chọn size</div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="huongdanContainer">
+            <div class="limit-container">
+              <div class="noidung">
+                <p><span>Bạn cần chuẩn bị tờ giấy trắng A4, bút, thước.</span></p>
+
+                <p><img class="w-100 object-fit-cover" alt="huong dan chon size"
+                    src="https://bitas.com.vn/lib/pic/huong-dan-chon-size.png" title="Hướng dẫn chọn size">
+                </p>
+
+                <table width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="" valign="top" width="70"><span>Bước 1</span></td>
+                      <td class="" valign="top"><span>:</span></td>
+                      <td class="" valign="top"><span>Đặt bàn chân ngay ngắn lên tờ giấy trắng và giữ chặt,
+                          đứng thẳng người.</span>
+                        <div class="red"><span>trong trường hợp bạn mua giày thể thao thì mang vớ để có độ
+                            chính xác cao.</span></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="" valign="top"><span>Bước 2</span></td>
+                      <td class="" valign="top"><span>:</span></td>
+                      <td class="" valign="top"><span>Dùng bút vẽ một vòng quanh chân bạn. (Hình 1)</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="" valign="top"><span>Bước 3</span></td>
+                      <td class="" valign="top"><span>:</span></td>
+                      <td class="" valign="top"><span>Đánh dấu điểm đầu ngón chân dài nhất và điểm gót
+                          chân.</span></td>
+                    </tr>
+                    <tr>
+                      <td class="" valign="top"><span>Bước 4</span></td>
+                      <td class="" valign="top"><span>:</span></td>
+                      <td class="" valign="top"><span>Dùng thước đo khoảng cách (mm) giữa 2 điểm vừa đánh dấu.
+                          (Hình 2)</span></td>
+                    </tr>
+                    <tr>
+                      <td class="" valign="top"><span>Bước 5</span></td>
+                      <td class="" valign="top"><span>:</span></td>
+                      <td class="" valign="top"><span>Dùng kết quả đo được (mm) so với bảng quy đổi bên dưới
+                          đề tìm ra cỡ size tương ứng</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h2><span style="font-size:22px;">Bảng quy đổi cỡ size</span></h2>
+
+                <p><img class="w-100 object-fit-contain" alt=""
+                    src="https://admin.bitas.com.vn/image/hangvo0103/size-178764288014800.png"
+                    style="width: 1031px; height: 144px;"></p>
+
+                <p><span style="font-size:22px;">Lưu ý</span></p>
+
+                <ul>
+                  <li><span>Bạn nên đo cả 2 bàn chân và chọn chiều dài bàn chân nào dài hơn để chọn cỡ số giày
+                      phù hợp với bạn.</span></li>
+                  <li><span>Do kết cấu của bàn chân thay đổi theo thời điểm trong ngày, nên sẽ có sai lệch tùy
+                      thuộc vào thời điểm bạn đo trong ngày. Thời gian tốt nhất để đo là vào cuối ngày.</span>
+                  </li>
+                  <li><span>Thông số cỡ số giày sẽ thay đổi tùy theo kết cấu bàn chân, theo từng mẫu và chất
+                      liệu của sản phẩm và theo sở thích mang ôm sát hay thoải mái của từng người. Vì vậy,
+                      bảng hướng dẫn chọn cỡ số giày chỉ mang tính chất tham khảo.</span></li>
+                </ul>
+
+                <p><strong>[Tham khảo thêm] BẢNG THÔNG SỐ CHỌN SIZE THEO CHIỀU CAO CÂN NẶNG</strong></p>
+
+                <table class="w-100 border-0">
+                  <tbody>
+                    <tr>
+                      <td class="border" colspan="1" rowspan="2" style="text-align: center;"><span>TUỔI</span>
+                      </td>
+                      <td class="border" colspan="3" rowspan="1" style="text-align: center;"><span>NỮ</span>
+                      </td>
+                      <td class="border" colspan="3" rowspan="1" style="text-align: center;"><span>NAM</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span>CAO (Cm)</span></td>
+                      <td><span>NẶNG (Kg)</span></td>
+                      <td><span>SIZE</span></td>
+                      <td><span>CAO (Cm)</span></td>
+                      <td><span>NẶNG (Kg)</span></td>
+                      <td><span>SIZE</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>2</span></td>
+                      <td class="border" style="text-align: center;"><span>85.5</span></td>
+                      <td class="border" style="text-align: center;"><span>12</span></td>
+                      <td class="border" style="text-align: center;"><span>21-22</span></td>
+                      <td class="border" style="text-align: center;"><span>86.8</span></td>
+                      <td class="border" style="text-align: center;"><span>12.5</span></td>
+                      <td class="border" style="text-align: center;"><span>21-22</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>3</span></td>
+                      <td class="border" style="text-align: center;"><span>94</span></td>
+                      <td class="border" style="text-align: center;"><span>14.2</span></td>
+                      <td class="border" style="text-align: center;"><span>23-24</span></td>
+                      <td class="border" style="text-align: center;"><span>95.2</span></td>
+                      <td class="border" style="text-align: center;"><span>14</span></td>
+                      <td class="border" style="text-align: center;"><span>23-24</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>4</span></td>
+                      <td class="border" style="text-align: center;"><span>100.3</span></td>
+                      <td class="border" style="text-align: center;"><span>15.4</span></td>
+                      <td class="border" style="text-align: center;"><span>25-26</span></td>
+                      <td class="border" style="text-align: center;"><span>102.3</span></td>
+                      <td class="border" style="text-align: center;"><span>16.3</span></td>
+                      <td class="border" style="text-align: center;"><span>25-26</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>5</span></td>
+                      <td class="border" style="text-align: center;"><span>107.9</span></td>
+                      <td class="border" style="text-align: center;"><span>17.9</span></td>
+                      <td class="border" style="text-align: center;"><span>27</span></td>
+                      <td class="border" style="text-align: center;"><span>109.2</span></td>
+                      <td class="border" style="text-align: center;"><span>18.4</span></td>
+                      <td class="border" style="text-align: center;"><span>27-28</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>6</span></td>
+                      <td class="border" style="text-align: center;"><span>115.5</span></td>
+                      <td class="border" style="text-align: center;"><span>19.9</span></td>
+                      <td class="border" style="text-align: center;"><span>28</span></td>
+                      <td class="border" style="text-align: center;"><span>115.5</span></td>
+                      <td class="border" style="text-align: center;"><span>20.6</span></td>
+                      <td class="border" style="text-align: center;"><span>28-29</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>7</span></td>
+                      <td class="border" style="text-align: center;"><span>121.1</span></td>
+                      <td class="border" style="text-align: center;"><span>22.4</span></td>
+                      <td class="border" style="text-align: center;"><span>29</span></td>
+                      <td class="border" style="text-align: center;"><span>121.9</span></td>
+                      <td class="border" style="text-align: center;"><span>22.9</span></td>
+                      <td class="border" style="text-align: center;"><span>29-30</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>8</span></td>
+                      <td class="border" style="text-align: center;"><span>128.2</span></td>
+                      <td class="border" style="text-align: center;"><span>25.8</span></td>
+                      <td class="border" style="text-align: center;"><span>30</span></td>
+                      <td class="border" style="text-align: center;"><span>128.2</span></td>
+                      <td class="border" style="text-align: center;"><span>25.6</span></td>
+                      <td class="border" style="text-align: center;"><span>31-32</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>9</span></td>
+                      <td class="border" style="text-align: center;"><span>133.3</span></td>
+                      <td class="border" style="text-align: center;"><span>28.1</span></td>
+                      <td class="border" style="text-align: center;"><span>31</span></td>
+                      <td class="border" style="text-align: center;"><span>133.3</span></td>
+                      <td class="border" style="text-align: center;"><span>28.6</span></td>
+                      <td class="border" style="text-align: center;"><span>32-33</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>10</span></td>
+                      <td class="border" style="text-align: center;"><span>138.4</span></td>
+                      <td class="border" style="text-align: center;"><span>31.9</span></td>
+                      <td class="border" style="text-align: center;"><span>32</span></td>
+                      <td class="border" style="text-align: center;"><span>138.4</span></td>
+                      <td class="border" style="text-align: center;"><span>32</span></td>
+                      <td class="border" style="text-align: center;"><span>33-34</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>11</span></td>
+                      <td class="border" style="text-align: center;"><span>144</span></td>
+                      <td class="border" style="text-align: center;"><span>36.9</span></td>
+                      <td class="border" style="text-align: center;"><span>33</span></td>
+                      <td class="border" style="text-align: center;"><span>144.5</span></td>
+                      <td class="border" style="text-align: center;"><span>36.9</span></td>
+                      <td class="border" style="text-align: center;"><span>34-35</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>12</span></td>
+                      <td class="border" style="text-align: center;"><span>149.8</span></td>
+                      <td class="border" style="text-align: center;"><span>41.5</span></td>
+                      <td class="border" style="text-align: center;"><span>34</span></td>
+                      <td class="border" style="text-align: center;"><span>149.9</span></td>
+                      <td class="border" style="text-align: center;"><span>41.5</span></td>
+                      <td class="border" style="text-align: center;"><span>36</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>13</span></td>
+                      <td class="border" style="text-align: center;"><span>156.7</span></td>
+                      <td class="border" style="text-align: center;"><span>45.8</span></td>
+                      <td class="border" style="text-align: center;"><span>35</span></td>
+                      <td class="border" style="text-align: center;"><span>156.9</span></td>
+                      <td class="border" style="text-align: center;"><span>45.8</span></td>
+                      <td class="border" style="text-align: center;"><span>37</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>14</span></td>
+                      <td class="border" style="text-align: center;"><span>158.7</span></td>
+                      <td class="border" style="text-align: center;"><span>47.6</span></td>
+                      <td class="border" style="text-align: center;"><span>36</span></td>
+                      <td class="border" style="text-align: center;"><span>163.8</span></td>
+                      <td class="border" style="text-align: center;"><span>47.6</span></td>
+                      <td class="border" style="text-align: center;"><span>38</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>15</span></td>
+                      <td class="border" style="text-align: center;"><span>159.7</span></td>
+                      <td class="border" style="text-align: center;"><span>52.1</span></td>
+                      <td class="border" style="text-align: center;"><span>37</span></td>
+                      <td class="border" style="text-align: center;"><span>170.1</span></td>
+                      <td class="border" style="text-align: center;"><span>54</span></td>
+                      <td class="border" style="text-align: center;"><span>39</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>16-17</span></td>
+                      <td class="border" style="text-align: center;"><span>162.5</span></td>
+                      <td class="border" style="text-align: center;"><span>53.5</span></td>
+                      <td class="border" style="text-align: center;"><span>38</span></td>
+                      <td class="border" style="text-align: center;"><span>173.4</span></td>
+                      <td class="border" style="text-align: center;"><span>60.8</span></td>
+                      <td class="border" style="text-align: center;"><span>40</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>17-18</span></td>
+                      <td class="border" style="text-align: center;"><span>162.5</span></td>
+                      <td class="border" style="text-align: center;"><span>54.4</span></td>
+                      <td class="border" style="text-align: center;"><span>39</span></td>
+                      <td class="border" style="text-align: center;"><span>175.2</span></td>
+                      <td class="border" style="text-align: center;"><span>64.4</span></td>
+                      <td class="border" style="text-align: center;"><span>41</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>18-19</span></td>
+                      <td class="border" style="text-align: center;"><span>163</span></td>
+                      <td class="border" style="text-align: center;"><span>56.7</span></td>
+                      <td class="border" style="text-align: center;"><span>40</span></td>
+                      <td class="border" style="text-align: center;"><span>175.7</span></td>
+                      <td class="border" style="text-align: center;"><span>66.9</span></td>
+                      <td class="border" style="text-align: center;"><span>42</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>19-20</span></td>
+                      <td class="border" style="text-align: center;"><span>163</span></td>
+                      <td class="border" style="text-align: center;"><span>57.1</span></td>
+                      <td class="border" style="text-align: center;"><span>41</span></td>
+                      <td class="border" style="text-align: center;"><span>176.5</span></td>
+                      <td class="border" style="text-align: center;"><span>68.9</span></td>
+                      <td class="border" style="text-align: center;"><span>43</span></td>
+                    </tr>
+                    <tr>
+                      <td class="border" style="text-align: center;"><span>21-22</span></td>
+                      <td class="border" style="text-align: center;"><span>163.3</span></td>
+                      <td class="border" style="text-align: center;"><span>58</span></td>
+                      <td class="border" style="text-align: center;"><span>42</span></td>
+                      <td class="border" style="text-align: center;"><span>177</span></td>
+                      <td class="border" style="text-align: center;"><span>70.3</span></td>
+                      <td class="border" style="text-align: center;"><span>44</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>&nbsp;</p>
+
+                        <p><span><u><strong>LƯU Ý:</strong></u></span></p>
+
+                        <p><span>1. Người trưởng thành từ 17-18 tuổi trở lên chân không còn thay đổi về kích
+                            thước nên chọn đúng size đã sử dụng trước đó&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp;</span></p>
+
+                        <p><span>2. Chiều cao và cân nặng ở mức phát triển bình thường theo tiêu chuẩn
+                            WHO</span></p>
+
+                        <p><span>3. Nếu chiều cao và cân nặng bị lệch so với tiêu chuẩn thì lấy chiều cao làm
+                            chuẩn để chọn size.</span></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>&nbsp;</p>
+
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>&nbsp;</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>&nbsp;</p>
+
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"> </div>
+      </div>
+    </div>
+  </div>
+  <section id="splienquan" class="text-center">
+    <h3>Sản phẩm liên quan </h3>
+    <div class="row w-100 row-cols-1 row-cols-md-3 g-5">
+      <div class="col d-flex overflow-hidden flex-column p-5 border border-black rounded-5 align-items-center">
+        <img class="w-75 " src="./img/image14.png" alt="" srcset="">
+        <h5>Ten sp</h5>
+        <div class="size">35-36</div>
+        <div class="price">140,000 đ</div>
+      </div>
+
     </div>
   </section>
   <!-- Bootstrap JavaScript Libraries -->
@@ -418,6 +476,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
+    integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" src="./js/detail.js"></script>
+  <script>
+    
+  </script>
 </body>
 
 </html>
