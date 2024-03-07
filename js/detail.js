@@ -40,31 +40,25 @@ const renderRelative = arrProduct => {
 
     arrProduct.forEach(product => {
 
-        content += `
-        <div class="col ">
-        <a class="wrapper d-flex overflow-hidden flex-column p-5 border border-black rounded-5 align-items-center" href="${getURL()}?idProduct=${product.id}">
-        <img class="w-75 " src="${product.image}" alt="" srcset="">
-        <h5>${product.name}</h5>
-        <div class="description">${product.shortDescription}</div>
-        <div class="price">${formatPrice(product.price * 1000)}</div>
-        </a>
-
-      </div>
-        `
+      
         relativeContent += `
-        <div class="col-6 col-md-4">
-        <a id="id1" href="#">
-            <img src="${product.image}" alt="Đây là ảnh Sản phẩm 1">
-        </a>
-        <div class="product-colors item${index}">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <p id="name1" class="product-name">Sản phẩm Demo</p>
-        <p id="size1" class="product-size">Size: 36 - 42</p>
-        <p id="price1">${formatPrice(product.price * 1000)}</p>
+        <div class="col-12 col-md-4" >
+            <a style="text-decoration: none" class="bg-white link-underline-none" href="${getURL()}?idProduct=${product.id}">
+            <div class="w-100 imgBx">
+                <img class="w-100" src="${product.image}">
+            </div>
+       
+            <div class="product-colors item${index}">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p id="name1" class="product-name">${product.name}</p>
+            <p id="size1" class="product-size">Size: 36 - 42</p>
+            <p id="price1">${formatPrice(product.price * 1000)}</p>
+            </a>
+       
     </div>
         `
         index++;
@@ -154,7 +148,6 @@ const sizeHandle = () => {
 
             // Lặp qua từng radio button và kiểm tra nếu được chọn
             for (const radio of radios) {
-
                 if (radio.checked) {
                     console.log(radio.value); // In ra value của radio button đang được chọn
                     break; // Thoát vòng lặp sau khi tìm thấy radio button được chọn

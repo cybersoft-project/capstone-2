@@ -59,7 +59,7 @@
         }
 
         .product-items {
-            a {
+            a, .imgBx {
                 background-color: $bg-color-pale;
                 padding: 10px 15px;
                 border-radius: 5px;
@@ -183,3 +183,42 @@
         }
     }
 }
+.carousel-indicators [data-bs-target] {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+  }
+
+  .list-unstyled li.active {
+    border: 3px solid rgb(154, 0, 0) !important;
+    background-color: rgb(252, 215, 221);
+  }
+
+  .number-input-container {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .number-input-container button {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .number-input-container input {
+    text-align: center;
+    border: none;
+    padding: 10px;
+    width: 40px;
+    font-size: 16px;
+    margin: 0;
+  }
